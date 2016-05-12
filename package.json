@@ -35,5 +35,4 @@
     "node": ">= 0.10"
   },
   "bin": "ng2-webpack.js"
-  }
 }
