@@ -28,7 +28,7 @@ module.exports = function() {
   }
 
   function copyBoilerplateBuild() {
-    var locations = ['entry', 'config', 'app', 'webpack.config.js'];
+    var locations = ['entry', 'config', 'app', 'webpack.config.js', 'shims.d.ts', 'tsconfig.json'];
     var test = false;
     var index = 0;
 
@@ -43,7 +43,7 @@ module.exports = function() {
       process.stdout.write('something went wrong, aborting. Error: ', test);
     }
     else if (test) {
-      process.stdout.write('this is a hard copy and will overwrite your app, entry, and config directories, as well as your webpack.config.js file. Continue? y/n');
+      process.stdout.write('this is a hard copy and will overwrite your app, entry, and config directories, as well as your webpack.config.js, shims.d.ts and tsconfig.json files. Continue? y/n');
       process.stdin.once('data', function (text) {
         text = text.trim();
         if (text == 'y' || text == 'Y' || text == 'yes' || text == 'Yes') {
@@ -76,7 +76,7 @@ module.exports = function() {
     for (var i = 0; i < locations.length; i++) {  
       ncp(__filename + locations[i], locations[i], function (err) {
         if (err) process.stdout.write(err);
-      } 
+      }); 
     }
   }
 }
