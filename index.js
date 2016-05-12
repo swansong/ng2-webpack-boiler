@@ -43,7 +43,7 @@ module.exports = function() {
       index++;
     }
 
-    if (test instanceOf Error) {
+    if (test instanceof Error) {
       process.stdout.write('something went wrong, aborting. Error: ', test);
     }
     else if (test) {
