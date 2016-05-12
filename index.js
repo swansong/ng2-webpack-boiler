@@ -3,6 +3,10 @@ module.exports = function() {
   var boiler = (process.argv.indexOf('boiler') !== -1);
 
   var fs = require('fs');
+  var path = require('path');
+
+  var parentRoot = path.resolve(__dirname).split('/node_modules')[0] + '/';
+  var thisRoot = path.resolve(__dirname) + '/';
   
   if (boiler) {
     return hardCopyAll();
@@ -24,7 +28,7 @@ module.exports = function() {
 
   function copySampleConfig() {
     process.stdout.write('copying sample webpack config for comparison purposes');
-    fs.createReadStream(__filename + 'webpack.config.js').pipe(fs.createWriteStream('sample.webpack.config.js'));
+    fs.createReadStream(thisRoot + 'webpack.config.js').pipe(fs.createWriteStream(parentRoot + 'sample.webpack.config.js'));
   }
 
   function copyBoilerplateBuild() {
@@ -35,7 +39,7 @@ module.exports = function() {
     process.stdout.write('preparing to copy webpack config and app boilerplate into your project');
 
     while (index < locations.length && !test) {
-      test = checkIfExists(location[index]);
+      test = checkIfExists(parentRoot + location[index]);
       index++;
     }
 
@@ -59,9 +63,9 @@ module.exports = function() {
     }
   }
 
-  function checkIfExists(location) {
+  function checkIfExists(fullPath) {
     try {
-      fs.lstatSync(location);
+      fs.lstatSync(fullPath);
       return true;
     }
     catch (err) {
@@ -74,9 +78,9 @@ module.exports = function() {
     var ncp = require('ncp').ncp;
 
     for (var i = 0; i < locations.length; i++) {  
-      ncp(__filename + locations[i], locations[i], function (err) {
+      ncp(thisRoot + locations[i], parentRoot + locations[i], function (err) {
         if (err) process.stdout.write(err);
       }); 
     }
   }
-}
+};
