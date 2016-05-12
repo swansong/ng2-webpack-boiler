@@ -31,8 +31,9 @@
     "webpack-dev-server": "~1.14.1",
     "ncp": "~2.0.0"
   },
-  "preferGlobal": "true",
-  "bin": {
-    "ng2-webpack" : "index.js"
+  "engines": {
+    "node": ">= 0.10"
+  },
+  "bin": "ng2-webpack.js"
   }
 }
