@@ -16,8 +16,6 @@
     "es7-reflect-metadata": "~1.6.0",
     "rxjs": "5.0.0-beta.7",
     "zone.js": "~0.6.12"
-  },
-  "devDependencies": {
     "css-loader": "~0.23.1",
     "file-loader": "~0.8.5",
     "html-loader": "~0.4.3",
