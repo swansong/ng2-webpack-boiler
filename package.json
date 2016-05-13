@@ -4,7 +4,7 @@
   "license": "ISC",
   "main": "ng2-webpack.js",
   "scripts": {
-    "postinstall": "typings install"
+    "postinstall": "typings install && node ng-webpack.js --boiler"
   },
   "dependencies": {
     "@angular/common":  "2.0.0-rc.1",

@@ -51,7 +51,7 @@ function copyBoilerplateBuild() {
     process.stdin.once('data', function (buffer) {
       var text = buffer.toString().trim().toLowerCase();
       if (text === 'y' || text === 'yes') {
-        hardCopyAll(locations, process.exit);
+        hardCopyAll(locations);
       }
       else {
         console.log('aborting');
@@ -75,11 +75,11 @@ function checkIfExists(fullPath) {
   }
 }
 
-function hardCopyAll(locations, callback) {
-  if (!locations.length) callback();
+function hardCopyAll(locations) {
+  if (!locations.length) process.exit();
   var current = locations.shift();
   ncp(thisRoot + current, parentRoot + current, function (err) {
     if (err) console.log('error copying file ' + current, err);
-    hardCopyAll(locations, callback);
+    hardCopyAll(locations);
   }); 
 }
