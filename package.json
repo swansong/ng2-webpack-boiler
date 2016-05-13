@@ -1,8 +1,20 @@
 {
-  "name": "ng2-webpack",
-  "version": "1.0.0",
+  "name": "ng2-webpack-boiler",
+  "version": "0.0.1",
   "license": "ISC",
   "main": "ng2-webpack.js",
+  "author": "Jon Swanson",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/swansong/ng2-webpack-boiler.git"
+  },
+  "keywords": [
+    "angular",
+    "angular2",
+    "webpack",
+    "build",
+    "boilerplate"
+  ],
   "scripts": {
     "postinstall": "typings install && node ng2-webpack.js --boiler"
   },
