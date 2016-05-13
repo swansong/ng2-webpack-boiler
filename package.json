@@ -1,6 +1,6 @@
 {
   "name": "ng2-webpack-boiler",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "license": "ISC",
   "main": "index.js",
   "author": "Jon Swanson",
