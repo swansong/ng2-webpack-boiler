@@ -1,9 +1,8 @@
-import {Config} from '../config/config.ts'
+import {Main} from './main.ts'
 import {enableProdMode} from 'angular2/core';
 
-enableProdMode()
+var config = require('../config/production.json');
 
-var config = new Config('production');
-import {Main} from './main.ts'
+enableProdMode()
 
 new Main(config);

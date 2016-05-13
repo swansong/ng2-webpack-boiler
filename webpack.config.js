@@ -48,6 +48,7 @@ module.exports = {
       { test: /\.css$/, loader: "text-loader" },
       { test: /\.less$/, loader: "style!css!less" },
       { test: /\.(woff|svg|ttf|eot|otf)([\?]?.*)$/, loader: "file-loader?name=fonts/[name].[ext]" },
+      { test: /\.json$/, loader: "json-loader" },
       { test: /\.html$/, loader: "text-loader" }
     ]
   },

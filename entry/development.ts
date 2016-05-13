@@ -1,6 +1,5 @@
-import {Config} from '../config/config.ts'
-var config = new Config('development');
-
 import {Main} from './main.ts'
+
+var config = require('../config/development.json');
 
 new Main(config);
