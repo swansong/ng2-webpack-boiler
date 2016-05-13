@@ -10,8 +10,7 @@
     "node_modules"
   ],
   "files": [
-    "shims.d.ts",
-    "node_modules/angular2/typings/browser.d.ts"
+    "typings.d.ts"
   ],
   "compileOnSave": false,
   "buildOnSave": false
