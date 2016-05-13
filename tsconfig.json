@@ -2,15 +2,21 @@
   "compilerOptions": {
     "target": "es5",
     "module": "commonjs",
+    "moduleResolution": "node",
+    "sourceMap": true,
     "emitDecoratorMetadata": true,
     "experimentalDecorators": true,
-    "sourceMap": true
+    "removeComments": false,
+    "noImplicitAny": false
   },
   "exclude": [
-    "node_modules"
+    "node_modules",
+    "typings/main",
+    "typings/main.d.ts"
   ],
   "files": [
-    "typings.d.ts"
+    "typings/typings.d.ts",
+    "typings/browser.d.ts"
   ],
   "compileOnSave": false,
   "buildOnSave": false

@@ -32,7 +32,7 @@ function copySampleConfig() {
 }
 
 function copyBoilerplateBuild() {
-  var locations = ['entry', 'config', 'app', 'webpack.config.js', 'typings.d.ts', 'tsconfig.json'];
+  var locations = ['entry', 'config', 'app', 'webpack.config.js', 'typings/typings.d.ts', 'tsconfig.json'];
   var test = false;
   var index = 0;
 
