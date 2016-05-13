@@ -32,7 +32,7 @@ function copySampleConfig() {
 }
 
 function copyBoilerplateBuild() {
-  var locations = ['entry', 'config', 'app', 'webpack.config.js', 'typings/typings.d.ts', 'tsconfig.json'];
+  var locations = ['entry', 'config', 'app', 'typings', 'webpack.config.js', 'tsconfig.json', 'index.html'];
   var test = false;
   var index = 0;
 
@@ -47,7 +47,7 @@ function copyBoilerplateBuild() {
     console.log('something went wrong, aborting. Error: ', test);
   }
   else if (test) {
-    process.stdout.write('this is a hard copy and will overwrite your app, entry, and config directories, as well as your webpack.config.js, typings.d.ts and tsconfig.json files. Continue? (y/n) ');
+    process.stdout.write('this is a hard copy and will overwrite your typings, app, entry, and config directories, as well as your webpack.config.js, tsconfig.json and index.html files. Continue? (y/n) ');
     process.stdin.once('data', function (buffer) {
       var text = buffer.toString().trim().toLowerCase();
       if (text === 'y' || text === 'yes') {
