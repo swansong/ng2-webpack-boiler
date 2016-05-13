@@ -2,7 +2,7 @@
   "name": "ng2-webpack-boiler",
   "version": "0.0.1",
   "license": "ISC",
-  "main": "ng2-webpack.js",
+  "main": "index.js",
   "author": "Jon Swanson",
   "repository": {
     "type": "git",
@@ -16,7 +16,7 @@
     "boilerplate"
   ],
   "scripts": {
-    "postinstall": "typings install && node ng2-webpack.js --boiler"
+    "postinstall": "typings install && node index.js --boiler --safe"
   },
   "dependencies": {
     "@angular/common":  "2.0.0-rc.1",
@@ -51,5 +51,5 @@
   "engines": {
     "node": ">= 0.10"
   },
-  "bin": "ng2-webpack.js"
+  "bin": "index.js"
 }

@@ -2,6 +2,7 @@
 
 var config = (process.argv.indexOf('--config') !== -1);
 var boiler = (process.argv.indexOf('--boiler') !== -1);
+var safe = (process.argv.indexOf('--safe') !== -1);
 
 var fs = require('fs');
 var path = require('path');
@@ -47,6 +48,10 @@ function copyBoilerplateBuild() {
     console.log('something went wrong, aborting. Error: ', test);
   }
   else if (test) {
+    if (safe) {
+      console.log('safe option specified, files not overwritten');
+      return;
+    }
     process.stdout.write('this is a hard copy and will overwrite your typings, app, entry, and config directories, as well as your webpack.config.js, tsconfig.json and index.html files. Continue? (y/n) ');
     process.stdin.once('data', function (buffer) {
       var text = buffer.toString().trim().toLowerCase();
